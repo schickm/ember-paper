@@ -32,6 +32,7 @@ export default Ember.Component.extend({
   }),
 
   _observeClosedState: Ember.observer('closed', function() {
+    this.sendAction();
     if (this.get('closed')) {
       Ember.$('body').css('overflow', 'inherit');
     } else {
@@ -57,7 +58,6 @@ export default Ember.Component.extend({
   actions: {
     toggleMenu() {
       if (!this.get('isLockedOpen')) {
-        this.sendAction();
         this.toggleProperty('closed');
       }
     }
