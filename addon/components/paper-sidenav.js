@@ -57,6 +57,7 @@ export default Ember.Component.extend({
   actions: {
     toggleMenu() {
       if (!this.get('isLockedOpen')) {
+        this.sendAction();
         this.toggleProperty('closed');
       }
     }
