@@ -202,7 +202,7 @@
       var srcStop = event.srcEvent.stopPropagation;
       if(typeof srcStop == "function") {
         event.srcEvent.stopPropagation = function(){
-          srcStop();
+          srcStop.call(this);
           event.stopPropagation();
         }
       }
