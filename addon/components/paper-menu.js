@@ -49,7 +49,7 @@ export default PaperMenuAbstract.extend({
       openMenuNode = el[0].firstElementChild,
       openMenuNodeRect = openMenuNode.getBoundingClientRect(),
     // body
-      boundryNode = document.body,
+      boundryNode = document.querySelector(Ember.getOwner(this).application.rootElement),
       boundryNodeRect = boundryNode.getBoundingClientRect();
 
     // icon that opens the menu
