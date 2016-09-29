@@ -44,16 +44,16 @@ export default Ember.Component.extend(ColorMixin, {
   },
 
   bar1Style: Ember.computed('clampedBufferValue', function() {
-    return new Ember.Handlebars.SafeString(this.get('constants.CSS.TRANSFORM') + ': ' + this.transforms[this.get('clampedBufferValue')]);
+    return Ember.String.htmlSafe(this.get('constants.CSS.TRANSFORM') + ': ' + this.transforms[this.get('clampedBufferValue')]);
   }),
 
   bar2Style: Ember.computed('clampedValue', function() {
 
     if (this.get('mode') === 'query') {
-      return new Ember.Handlebars.SafeString('');
+      return Ember.String.htmlSafe('');
     }
 
-    return new Ember.Handlebars.SafeString(this.get('constants.CSS.TRANSFORM') + ': ' + this.transforms[this.get('clampedValue')]);
+    return Ember.String.htmlSafe(this.get('constants.CSS.TRANSFORM') + ': ' + this.transforms[this.get('clampedValue')]);
   }),
 
   clampedValue: Ember.computed('value', function() {

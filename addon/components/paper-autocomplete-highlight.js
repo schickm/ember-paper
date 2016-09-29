@@ -10,7 +10,7 @@ export default Ember.Component.extend({
     var flags = this.get('flags');
     var regex = this.getRegExp(this.get('searchText'), flags);
     var html  = text.replace(regex, '<span class="highlight">$&</span>');
-    return new Ember.Handlebars.SafeString(html);
+    return Ember.String.htmlSafe(html);
   }),
 
   sanitize(term) {
