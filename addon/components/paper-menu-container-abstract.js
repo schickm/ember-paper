@@ -55,6 +55,7 @@ export default Ember.Component.extend({
   willDestroyElement() {
     // Destroy resize handler.
     Ember.$(window).off('resize',this.get('_resizeHandler'));
+    this.$().remove();
   },
 
   hideWrapper() {
