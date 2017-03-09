@@ -5,7 +5,7 @@ import ProxiableMixin from 'ember-paper/mixins/proxiable-mixin';
 import ColorMixin from 'ember-paper/mixins/color-mixin';
 
 export default BaseFocusable.extend(RippleMixin, ProxiableMixin, ColorMixin, {
-  attributeBindings: ['target', 'action', 'type'],
+  attributeBindings: ['target', 'action', 'type', 'title'],
   tagName: 'button',
   themed: true,
   classNameBindings: ['raised:md-raised', 'icon-button:md-icon-button', 'focus:md-focused', 'themed:md-default-theme', 'themed:md-button'],
